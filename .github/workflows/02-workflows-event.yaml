@@ -1,4 +1,4 @@
-name: o2-workflow-event
+name: 02-workflow-event
 
 on: push
 
