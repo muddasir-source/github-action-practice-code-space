@@ -1,0 +1,11 @@
+name: o2-workflow-event
+
+on: push
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 
+              run: echo "i have been trigger by a(n) ${{github.event_name}} event. "
+            
