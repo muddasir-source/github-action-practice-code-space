@@ -15,7 +15,7 @@ jobs:
       steps:
         - name: Show OS
           run: |
-               echo "this job is running on an ubuntu runner"
+               echo "this job is running on an windows runner"
                echo "Runner os: $RUNNER_OS"
 
 
