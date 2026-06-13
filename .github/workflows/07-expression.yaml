@@ -1,12 +1,12 @@
 name: -7 Using Expression
-run-name: 07 - Using Expressions | Debug - ${{inputs.Debug && 'ON' || 'OFF'}}
+run-name: 07 - Using Expressions | Debug - ${{inputs.debug && 'ON' || 'OFF'}}
 
 on: 
-    Push:
+    push:
     workflow_dispatch:
         inputs:
             debug:
-                type:
+                type: boolean
                 default: false
 
 jobs:
@@ -26,11 +26,3 @@ jobs:
                 echo: " I was trigger from main"
             - name: Greeting
               run: echo "Hello world"
-
-
-
-
-
-
-
-
