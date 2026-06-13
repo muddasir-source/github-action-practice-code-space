@@ -1,11 +1,11 @@
-name: -7 Using Expression
+name: 07 - Using Expression
 
 on: 
-    Push:
+    push: 
     workflow_dispatch:
         inputs:
             debug:
-                type:
+                type: boolean
                 default: false
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
             - name: '[debug] Print when Trigger from main'
               if: ${{ inputs.debug && github.ref == 'refs/heads/main' }}
               run: |
-                echo: " I was trigger from main"
+                echo " I was trigger from main"
             - name: Greeting
               run: echo "Hello world"
 
