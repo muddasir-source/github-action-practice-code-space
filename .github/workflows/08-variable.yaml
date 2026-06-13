@@ -1,0 +1,36 @@
+name: 08 - Using varaibles
+
+on: 
+    push:
+    workflow_dispatch:
+env:
+    WORKFLOW_VAR: ' I am a workflow var'
+    OVERWRITTEN: 'I AM A Overwritten'
+
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        env:
+            JOB_VAR: 'I am a job env var'
+            OVERWRITTEN: ' I have been overwritten at the job level'
+
+        steps: 
+        - name: Print ENV Vairables
+          env:
+            STEP_VAR: "I am a Step env var"
+            step_var2: "I am another step env var"
+          run: | 
+            echo "Steps env var: ${{vars.STEP_VAR}}"
+            echo "steps2 env var: ${{vars.step_var2}}"
+            echo "this var is from job level: ${{vars.JOB_VAR}}"
+            echo "workflow levelvar: ${{vars.WORKFLOW_VAR}}"
+            echo "Overwritten: ${{vars.OVERWRITTEN}}"
+
+        - name:
+          env:
+             OVERWRITTEN: " I have been overwritten at the steps level"
+          run: |
+            echo "steps env var: ${{env.OVERWRITTEN}}"
+
+
+
