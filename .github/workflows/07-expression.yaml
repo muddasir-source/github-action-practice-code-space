@@ -1,4 +1,5 @@
 name: -7 Using Expression
+run-name: 07 - Using Expressions | Debug - ${{inputs.Debug && 'ON' || 'OFF'}}
 
 on: 
     Push:
